@@ -4,7 +4,7 @@ Email Health Check
 ## install
 
 ```
-npm inslall
+npm install
 ```
 
 ## setting
