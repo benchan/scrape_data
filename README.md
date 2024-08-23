@@ -1,16 +1,11 @@
 # scrape_data
-Email Health Check
-
-## install
-
-```
-npm inslall
-```
+Email Health Check (Docker ver.)
 
 ## setting
 ```
 cp .env.template .env
 ```
+
 ### edit .evn file
 ```
 USER_NAME=xxxxxxxx
@@ -18,10 +13,14 @@ USER_PASSWORD=xxxxxxxx
 BASE_URL=https://xxxxxxxxxxxxxx/reditor/kanri/
 ```
 
-## run
-
+## build
 ```
-node index.js
+docker compose build
+```
+
+## run
+```
+docker compose up -d
 ```
 
 ## results
