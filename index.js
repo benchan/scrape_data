@@ -3,7 +3,12 @@ const fs = require('fs').promises;
 const puppeteer = require('puppeteer');
 
 async function loginAndScrape() {
-  const browser = await puppeteer.launch({ headless: "new" });
+  const browser = await puppeteer.launch({ 
+    headless: "new",
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || '/usr/bin/chromium-browser'
+  });
+  
   const page = await browser.newPage();
   const domail_list_page_url = process.env.BASE_URL + 'DomainsList.php?sid=';
   const login_page_url = process.env.BASE_URL + 'Login.php';
